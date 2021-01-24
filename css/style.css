@@ -574,6 +574,7 @@ About Section
 }
 /* 2. experience 3. education */
 .about-section .education,
+.about-section .course,
 .about-section .experience{
     padding-bottom: 80px;
 }
