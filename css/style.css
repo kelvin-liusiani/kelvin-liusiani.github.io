@@ -2,6 +2,7 @@
 Fonts
 ======================================*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
+@import url("skins/color-1.css");
 
 /*====================================
 Global Style 
@@ -9,8 +10,10 @@ Global Style
 /* Define Custom CSS Variables */
 :root{
     --bg-black-900: #000000;
+    --bg-black-150: #cccccc;
     --bg-black-100: #dddddd;
     --bg-black-50: #eff0f4;
+    --bg-white-50:  #fdfdfd;
     --text-black-900: #000000;
     --text-black-700: #555555;
     --text-black-600: #666666;
@@ -21,13 +24,31 @@ Global Style
 
     --bg-main: #eff0f4;
     --bg-menu: #eff0f4;
+    --alpha : 0.5;
 }
+body.dark{
+    --bg-black-900: #ffffff;
+    --bg-black-150: #353535;
+    --bg-black-100: #2b2c2f;
+    --bg-black-50: #eff0f4;
+    --bg-white-50:  #fdfdfd;
+    --text-black-900: #ffffff;
+    --text-black-700: #ffffff;
+    --text-black-600: #bbbbbb;
+    --text-black-300: #bbbbbb;
+    --outer-shadow: 3px 3px 3px #222327, -3px -3px 3px #363636;
+    --outer-shadow-0: 0 0 0  #222327, 0 0 0 #363636;
+    --inner-shadow: inset 3px 3px 3px #222327, inset -3px -3px 3px #363636;    
 
+    --bg-main: #353535;
+    --bg-menu: #353535;
+}
 body{
     font-size: 16px;
     line-height: 1.5;
     overflow-x: hidden;
     background-color: var(--bg-main);
+    /* background-image: linear-gradient(to right, rgba(255,255,255, 0.5), rgba(255,255,255,0.5)), url(/img/bg.png); */
 }
 *:not(i){
     font-family: 'Raleway', sans-serif;
@@ -151,6 +172,42 @@ img{
         transform: translateY(25px);
     }
 }
+@keyframes fadeInTop{
+    0%{
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.section-title{
+    padding: 0 15px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.section-title h2{
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    text-transform: uppercase;
+    margin: 0;
+}
+.section-title h2:before{
+    content: attr(data-heading);
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--skin-color);
+}
+/* .section.hide{
+    display: none;
+} */
 
 /*====================================
 Header
@@ -177,6 +234,8 @@ Header
     text-transform: uppercase;
 }
 .header .hamburger-btn{
+    position: fixed;
+    right: 15px;
     height: 40px;
     width: 40px;
     display: flex;
@@ -228,6 +287,35 @@ Navigation Menu
     visibility: hidden;
     overflow-y: auto;
 }
+.fade-out-effect{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-black-50);
+    z-index: -1;
+    visibility: hidden;
+}
+.fade-out-effect.active{
+    visibility: visible;
+    z-index: 1000;
+    animation: fadeOut 0.3s ease-out;
+}
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.nav-menu.open{
+    visibility: visible;
+    opacity: 1;
+    z-index: 999;
+    transition: all 0.3s ease-in;
+}
 .nav-menu .close-nav-menu{
     height: 40px;
     width: 40px;
@@ -267,14 +355,14 @@ Navigation Menu
     display: inline-block;
     font-size: 28px;
     font-weight: 600;
-    color: var(--text-black-700);
+    color: var(--text-black-600);
     padding: 5px 30px;
     text-transform: capitalize;
     border-radius: 30px;
     transition: all 0.3s ease;
 }
-.nav-menu ul li a:active{
-    color: var(--skin-color)
+.nav-menu ul li a.active{
+    color: var(--skin-color);
 }
 .nav-menu ul li a:after{
     border-radius: 30px;
@@ -292,7 +380,7 @@ Navigation Menu
 Home Section
 ======================================*/
 .home-section{
-    position: relative:
+    position: relative;
 }
 .home-section .full-screen{
     padding: 50px 0;
@@ -318,7 +406,7 @@ Home Section
     margin: 0;
 }
 .home-section .home-text h1{
-    color: var(--text-black-700);
+    color: var(--text-black-600);
     font-size: 20px;
     font-weight: 500;
     margin: 0;
@@ -337,4 +425,264 @@ Home Section
     width: 100%;
     border-radius: 50%;
     border: 10px solid transparent;
+}
+
+
+/*====================================
+About Section
+======================================*/
+.about-section{
+    padding: 80px 0 0px;
+    min-height: 100vh;
+}
+.about-section .about-img{
+    flex: 0 0 40%;
+    max-width: 40%;
+    padding: 0 15px;
+}
+.about-section .about-img .img-box{
+    padding: 15px;
+    border-radius: 5px;
+}
+.about-section .about-img .img-box img{
+    width: 100%;
+    border: 10px solid transparent;
+    border-radius: 5px;
+}
+.about-section .about-img .social-links{
+    margin-top: 20px;
+    text-align: center;
+}
+.about-section .about-img .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 40px;
+    color: var(--text-black-600);
+    margin: 0 4px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+.about-section .about-img .social-links a:after{
+    border-radius: 50%;
+}
+.about-section .about-img .social-links a:hover{
+    color: var(--skin-color);
+}
+.about-section .about-img .social-links a i{
+    line-height: 40px;
+}
+.about-section .row{
+    align-items: center;
+    justify-content: center;
+}
+.about-section .about-info{
+    flex: 0 0 60%;
+    max-width: 60%;
+    margin-top: -100px;
+    text-align: justify;
+    padding: 0 15px;
+}
+.about-section .about-info p{
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 15px;
+    color: var(--text-black-700);
+    margin-bottom: 30px;
+    word-spacing: 3px;
+}
+.about-section .about-info .colored{
+    color: var(--skin-color);
+    font-weight: 600;
+}
+
+/* tabs */
+.about-section .about-tabs{
+    padding: 60px 15px 50px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+}
+.about-section .about-tabs .tab-item{
+    display: inline-block;
+    margin: 50px 5px 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    color: var(--text-black-600);
+    font-weight: 500;
+    text-transform: capitalize;
+}
+.about-section .about-tabs .tab-item:hover:not(active){
+    opacity: 0.6;
+}
+.about-section .about-tabs .tab-item.active{
+    color: var(--skin-color);
+}
+/* Tabs content */
+.about-section .tab-content{
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: none;
+}
+.about-section .tab-content.active{
+    display: block;
+    animation: fadeInTop 0.7s ease;
+}
+/* 1. Skills */
+.about-section .skills{
+    padding-bottom: 50px;
+}
+.about-section .skills .skill-item{
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 10px;
+    margin-bottom: 30px;
+}
+.about-section .skills .skill-item p{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    text-transform: captialize;
+    margin: 0 0 15px;
+}
+.about-section .skills .skill-item .progress{
+    height: 20px;
+    border-radius: 10px;
+    position: relative;
+}
+.about-section .skills .skill-item .progress-bar{
+    background-color: var(--text-black-900);
+    height: 6px;
+    left: 7px;
+    top: 7px;
+    position: absolute;
+    border-radius: 10px;
+}
+.about-section .skills .skill-item .progress-bar span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin-top: -40px;
+}
+/* 2. experience 3. education */
+.about-section .education,
+.about-section .experience{
+    padding-bottom: 80px;
+}
+.about-section .timeline{
+    flex: 0 0 100%;
+    max-width: 100%;
+    position: relative;
+}
+.about-section .timeline:before{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: var(--bg-black-100);
+    left: 50%;
+    top: 0;
+    position: absolute;
+}
+.about-section .timeline .timeline-item{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+    
+}
+.about-section .timeline .timeline-item:nth-child(odd){
+    padding-right: calc(50% + 50px);
+    text-align: right;
+}
+.about-section .timeline .timeline-item:nth-child(even){
+    padding-left: calc(50% + 50px);
+}
+.about-section .timeline .timeline-item-inner{
+    padding: 30px;
+    border-radius: 5px;
+    position: relative;
+    text-align: left;
+}
+.about-section .timeline .timeline-item-inner:before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 1px;
+    background-color:var(--bg-black-100);
+    top: 37px;
+}
+.about-section .timeline .timeline-item:nth-child(odd) .timeline-item-inner:before{
+    right: -30px;
+}
+.about-section .timeline .timeline-item:nth-child(even) .timeline-item-inner:before{
+    left: -30px;
+}
+.about-section .timeline .timeline-item-inner .icon{
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    background-color: var(--bg-black-50);
+    border: 1px solid var(--bg-black-100);
+    line-height: 40px;
+    border-radius: 50%;
+    font-size: 16px;
+    color: var(--skin-color);
+    position: absolute;
+    top: 18px;
+    
+}
+.about-section .timeline .timeline-item:nth-child(odd) .icon{
+    right: -70px;
+}
+.about-section .timeline .timeline-item:nth-child(even) .icon{
+    left: -70px;
+}
+.about-section .timeline .timeline-item-inner span{
+    font-weight: 500;
+    color: var(--skin-color);
+    display: block;
+    margin: 0 0 10px;
+    text-transform: capitalize;
+    
+}
+.about-section .timeline .timeline-item-inner h3{
+    font-size: 20px;
+    color: var(--text-black-900);
+    font-weight: 600;
+    margin: 0 0 5px;
+    text-transform: capitalize;
+}
+.about-section .timeline .timeline-item-inner h4{
+    font-size: 16px;
+    font-style: italic;
+    color: var(--text-black-600);
+    margin: 0; 
+}
+.about-section .timeline .timeline-item-inner p{
+    font-size: 14px;
+    color: var(--text-black-900);
+    line-height: 26px;
+    margin: 0px 0 0;
+    /* text-align: justify; */
+    font-weight: 500;
+}
+.about-section .timeline .timeline-item-inner li{
+    font-size: 14px;
+    color: var(--text-black-900);
+    line-height: 26px;
+    margin: 0 15px 0;
+    text-align: justify;
+    font-weight: 500;
+    overflow-wrap: break-word;
+}
+.about-section .timeline .timeline-item-inner .colored{
+    color: var(--skin-color);
+    font-weight: 650;
 }

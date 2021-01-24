@@ -8,10 +8,18 @@
   <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
   <!-- main css -->
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- default color skin -->
+  <link rel="stylesheet" type="text/css" href="css/skins/color-4.css">
+  <link rel="stylesheet" type="text/css" href="css/style-switcher.css">
+  <!-- style switcher -->
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-1" href="css/skins/color-1.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-2" href="css/skins/color-2.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-3" href="css/skins/color-3.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-4" href="css/skins/color-4.css" disabled>
+  <link rel="stylesheet" type="text/css" class="alternate-style" title="color-5" href="css/skins/color-5.css" disabled>
 </head>
-<body>
-
-
+<body class="dark">
+<!-- ==================================================================== -->
 <!-- Header Start -->
 <header class="header">
   <div class="container">
@@ -25,25 +33,24 @@
     </div>
   </div> 
 </header>
-<!-- Header End -->
+<!-- ==================================================================== -->
 <!-- Navigation Menu Start -->
 <nav class="nav-menu">
   <div class="close-nav-menu outer-shadow hover-in-shadow">&times;</div>
   <div class="nav-menu-inner">
     <ul>
-      <li><a href="#" class="inner-shadow active">home</a></li>
-      <li><a href="#" class="outer-shadow hover-in-shadow">about</a></li>
-      <li><a href="#" class="outer-shadow hover-in-shadow">services</a></li>
-      <li><a href="#" class="outer-shadow hover-in-shadow">portfolio</a></li>
-      <li><a href="#" class="outer-shadow hover-in-shadow">testimonial</a></li>
-      <li><a href="#" class="outer-shadow hover-in-shadow">contact</a></li>
+      <li><a href="#home" class="link-item inner-shadow active">home</a></li>
+      <li><a href="#about" class="link-item outer-shadow hover-in-shadow">about</a></li>
+      <li><a href="#portfolio" class="link-item outer-shadow hover-in-shadow">portfolio</a></li>
     </ul>
   </div>
   <p class="copyright-text">&copy; 2021 Kelvin Liusiani</p>
 </nav>
-<!-- Navigation Menu End -->
+<div class="fade-out-effect"> 
+</div>
+<!-- ==================================================================== -->
 <!-- Home Section Start -->
-<section class="home-section section">
+<section class="home-section section active" id="home">
   <!-- Effect Wrap Start -->
   <div class="effect-wrap">
     <div class="effect effect-1"></div>
@@ -54,25 +61,260 @@
       <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
     </div>
   </div>
-  <!-- Effect Wrap End -->
+  <!-- Data! -->
   <div class="container">
     <div class="row full-screen align-items-center">
       <div class="home-text">
         <p>Hello</p>
         <h2>I'm Kelvin Liusiani</h2>
-        <h1>Artificial Intelligence and Data Scientist</h1>
-        <a href="#" class="btn-1 outer-shadow hover-in-shadow">More About Me</a>
+        <h1>Artificial Intelligence Engineer and Data Scientist</h1>
+        <a href="#about" class="link-item btn-1 outer-shadow hover-in-shadow">More About Me</a>
       </div>
       <div class="home-img">
         <div class="img-box inner-shadow">
-          <img src="img/profile-pic.png" class="outer-shadow" alt="profile-pic">
+          <img src="img/profile-pic.jpg" class="outer-shadow" alt="profile-pic">
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- Home Section End -->
+<!-- ==================================================================== -->
+<!-- About Me -->
+<section class="about-section section" id="about">
+  <div class="container">
+    <!-- Section -->
+    <!-- Title -->
+    <div class="row">
+      <div class="section-title">
+        <h2 data-heading="main info">About me</h2>
+      </div>
+    </div>
+    <!-- Describe -->
+    <div class="row">
+      <div class="about-img">
+        <div class="img-box inner-shadow">
+          <img src="img/profile-pic.jpg" class="outer-shadow" alt="profile-pic">
+        </div>
+        <!-- Social Media -->
+        <div class="social-links">
+          <a href="#" class="outer-shadow hover-in-shadow"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="outer-shadow hover-in-shadow"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="about-info">
+        <!-- about info -->
+        <p style="margin-bottom: 10px;"><b class="colored">Kelvin</b> is <b class="colored">Artificial Intelligence Engineer</b> and <b class="colored">Data Scientist.</b></p>
+        <p>
+          He is very enthusiast with AI for over two years of continual learning and experience in <b class="colored">Computer Vision</b> and <b class="colored">Data Science.</b> 
+          He also Very passionate with <b class="colored">new technology</b>, routinely read new and SOTA research. He loves to be <b class="colored">engineer</b>, who always 
+          solving any problem that he is facing using his <b class="colored">logical thinking</b> and his <b class="colored">fundamental skills.</b> 
+        </p>
+        <!-- Button -->
+        <a href="cv.pdf" class="btn-1 outer-shadow hover-in-shadow"> Download CV</a>
+      </div>
+    </div>
+    <!-- Tabs -->
+    <div class="row">
+      <div class="about-tabs">
+        <span class="tab-item outer-shadow active" data-target=".skills">skills</span>
+        <span class="tab-item" data-target=".experience">experience</span>
+        <span class="tab-item" data-target=".education">education</span>
+      </div>
+    </div>
+    <!-- Tabs Content -->
+    <!-- 1. Skills -->
+    <div class="row">
+      <div class="skills tab-content active">
+        <div class="row">
+          <!-- Skills item -->
+          <!-- 1. Image Processing -->
+          <div class="skill-item">
+            <p>Image Processing</p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(90% - 14px)">
+                <span>90%</span>
+              </div>
+            </div>
+          </div>
+          <!-- 2. Deep Learning -->
+          <div class="skill-item">
+            <p>Deep Learning</p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(87% - 14px)">
+                <span>87%</span>
+              </div>
+            </div>
+          </div>
+          <!-- 3. Python -->
+          <div class="skill-item">
+            <p>Python</p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(90% - 14px)">
+                <span>90%</span>
+              </div>
+            </div>
+          </div>
+          <!-- 4. C++ -->
+          <div class="skill-item">
+            <p>C/C++</p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(84% - 14px)">
+                <span>84%</span>
+              </div>
+            </div>
+          </div>
+          <!-- 5. Data Science -->
+          <div class="skill-item">
+            <p>Data Science</p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(84% - 14px)">
+                <span>84%</span>
+              </div>
+            </div>
+          </div>
+          <!-- 6. IoT -->
+          <div class="skill-item">
+            <p>IoT</p>
+            <div class="progress inner-shadow">
+              <div class="progress-bar" style="width: calc(82% - 14px)">
+                <span>82%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 2. Experiences -->
+    <div class="row">
+      <div class="experience tab-content">
+        <div class="row">
+          <div class="timeline">
+            <div class="row">
+              <!-- TimeLine -->
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-briefcase icon"></i>
+                  <span>Feb 2020 - Jan 2021</span>
+                  <h3>Artificial Intelligence Engineer (Associate) </h3>
+                  <h4>Synnex Metrodata Indonesia </h4>
+                  <ol>
+                    <li><b class="colored">Fine-tuning Object Detection model</b> (ex: Faster-RCNN, MoibleNet V2-SSD, Yolo V3 and Yolo V5) using some <b class="colored">deep learning framework</b>, like Tensorflow and Pytorch</li>
+                    <li>Deploy solution on edge (Intel NUC) using <b class="colored">Intel OpenVINO Toolkits</b> and <b class="colored">ONNX as an Inference.</b></li>
+                    <li><b class="colored">Creating some AI solutions from scratch:</b> People Counting, Vehicle Counting, Face Recognition for Attendance System, Indonesian License Plate Recognition, Smart Digital Signage System, Face-Mask Alarm and Social Distancing Alarm</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-briefcase icon"></i>
+                  <span>Nov 2019 – Feb 2020</span>
+                  <h3>Artificial Intelligence Engineer (Intern)</h3>
+                  <h4>Reblood (Non-profit Startup)</h4>
+                  <ol>
+                    <li>Create <b class="colored">image classifier</b> for the receipt proof of blood donor</li>
+                    <li>Using <b class="colored">Google Cloud Vision for Text Detection</b> and create  <b class="colored">automatic information retrieval</b> using python</li>
+                    <li>Deploy on <b class="colored">Google Cloud App Engine</b></li>
+                  </ol>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-briefcase icon"></i>
+                  <span>Jul 2019 – Aug 2020</span>
+                  <h3>Electronics/IoT Engineer (Intern)</h3>
+                  <h4>PT MISEL (Industrial Automation System)</h4>
+                  <p><b class="colored">Project:</b> Pool and Jacuzzi Water Heater Automation IoT Based in Kapal Api’s Villa at Trawas</p>
+                  <ol>
+                    <li>Build Water Heater Automation Controlled by Delta <b class="colored">PLC</b> (Two PLC)</li>
+                    <li>Build <b class="colored">Three HMI</b> (Human Machine Interface) for the boiler room, filter room and pool</li>
+                    <li>Connect them into <b class="colored">IoT system using local wireless for Smartphone Controller</b></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 3. Education -->
+    <div class="row">
+      <div class="education tab-content">
+        <div class="row">
+          <div class="timeline">
+            <div class="row">
+              <!-- TimeLine -->
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-graduation-cap icon"></i>
+                  <span>Aug 2016 – Jan 2020</span>
+                  <h3>Bachelor of Engineering in Electrical Engineering</h3>
+                  <h4>Institute Technology of Sepuluh Nopember (ITS)</h4>
+                  <ul>
+                    <li><b class="colored">Cum Laude Honor</b> (3.5 years)</li>
+                    <li><b class="colored">GPA:</b> 3.81 / 4.00</li>
+                  </ul>
+                  <p>---------------------------------------------------------------------------</p>
+                  <p><b class="colored">Thesis:</b> “Dataset Maker System using Gaussian Mixture Model (GMM) Method for Object Learning”</p>
+                  <ol>
+                    <li>Creating <b class="colored">Dataset of 360º of Household Objects</b> using Kinect V2 with <b class="colored">GMM for object segmentation.</b></li>
+                    <li>This Dataset contains of <b class="colored">labels</b>, <b class="colored">object segmentations</b> (RGB, Near-Infrared, and Depth map) and <b class="colored">volume of objects.</b></li>
+                  </ol>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-graduation-cap icon"></i>
+                  <span>Jan 2020 – July 2020</span>
+                  <h3>(non-formal) Student of Bangkit Academy</h3>
+                  <h4>Led by Google, Tokopedia, Gojek, & Traveloka</h4>
+                  <p class="colored">An exclusive machine learning academy with very selected students</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-graduation-cap icon"></i>
+                  <span>April 2020 – July 2020</span>
+                  <h3>(Non-Formal) Nanodegree</h3>
+                  <h4>Intel® Edge AI for IoT Developers Nanodegree Program</h4>
+                  <p class="colored">Nanodegree program from Udacity and Intel with some project</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-item-inner outer-shadow">
+                  <i class="fas fa-graduation-cap icon"></i>
+                  <span>Jul 2019 – Aug 2019</span>
+                  <h3>(Non-Formal) Student of Artificial Intelligence Digital Talent Academy Scholarship</h3>
+                  <h4>by Indonesian Ministry of Communication and Information Technology</h4>
+                  <p class="colored">Full time bootcamp within 2 months with some final – projects</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
 
+
+<!-- Style Switcher -->
+<div class="style-switcher outer-shadow">
+  <div class="style-switcher-toggler s-icon outer-shadow hover-in-shadow">
+    <i class="fas fa-cog fa-spin"></i>
+  </div>
+  <div class="day-night s-icon outer-shadow hover-in-shadow">
+    <i class="fas"></i>
+  </div>
+  <h4>Theme Colors</h4>
+  <div class="colors">
+    <span class="color-1" onclick="setActiveStyle('color-1')"></span>
+    <span class="color-2" onclick="setActiveStyle('color-2')"></span>
+    <span class="color-3" onclick="setActiveStyle('color-3')"></span>
+    <span class="color-4" onclick="setActiveStyle('color-4')"></span>
+    <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+  </div>
+</div>
+
+<!-- ==================================================================== -->
 <!-- main js -->
 <script src="js/main.js"></script>
 <!-- style switcher js -->
