@@ -3,6 +3,7 @@ Fonts
 ======================================*/
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 @import url("skins/color-1.css");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 /*====================================
 Global Style 
@@ -13,8 +14,10 @@ Global Style
     --bg-black-150: #cccccc;
     --bg-black-100: #dddddd;
     --bg-black-50: #eff0f4;
+    --bg-opacity: rgba(255,255,255,0.5);
     --bg-white-50:  #fdfdfd;
     --text-black-900: #000000;
+    --text-black-800: #333333;
     --text-black-700: #555555;
     --text-black-600: #666666;
     --text-black-300: #bbbbbb;
@@ -33,7 +36,8 @@ body.dark{
     --bg-black-50: #eff0f4;
     --bg-white-50:  #fdfdfd;
     --text-black-900: #ffffff;
-    --text-black-700: #ffffff;
+    --text-black-800: #eeeeee;
+    --text-black-700: #dddddd;
     --text-black-600: #bbbbbb;
     --text-black-300: #bbbbbb;
     --outer-shadow: 3px 3px 3px #222327, -3px -3px 3px #363636;
@@ -42,17 +46,24 @@ body.dark{
 
     --bg-main: #353535;
     --bg-menu: #353535;
+    --bg-main1: #353535;
 }
 body{
     font-size: 16px;
     line-height: 1.5;
     overflow-x: hidden;
     background-color: var(--bg-main);
+    min-height: 100%;
+    /* font-family:  'Open Sans', sans-serif !important; */
     /* overflow-y: hidden; */
     /* background-image: linear-gradient(to right, rgba(255,255,255, 0.5), rgba(255,255,255,0.5)), url(/img/bg.png); */
 }
+body.stop-scrolling{
+    overflow-y: hidden;
+}
 *:not(i){
     font-family: 'Raleway', sans-serif;
+    /* font-family:  'Open Sans', sans-serif; */
     font-weight: 400;
 }
 *{
@@ -206,20 +217,22 @@ img{
     font-weight: 600;
     color: var(--skin-color);
 }
-/* .section.hide{
+.section.hide{
     display: none;
-} */
+}
 
 /*====================================
 Header
 ======================================*/
 .header{
     padding: 20px 15px;
-    position: absoulute;
+    position: fixed;
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 99;   
+    z-index: 99;  
+    background-color: var(--bg-main1);
+    opacity:1;
 }
 .header .logo a{
     display: inline-block;
@@ -272,6 +285,25 @@ Header
     top: 6px;
 }
 
+.header .nav-hor a{
+    display: inline-block;
+    margin: 0 5px 10px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-size: 20px;
+    color: var(--text-black-600);
+    font-weight: 600;
+    text-transform: capitalize;
+}
+.header .nav-hor a:hover:not(active){
+    opacity: 0.6;
+}
+.header .nav-hor a.active{
+    color: var(--skin-color);
+    box-shadow: var(--outer-shadow);
+}
 /*====================================
 Navigation Menu
 ======================================*/
@@ -350,7 +382,7 @@ Navigation Menu
     text-align: center;
 }
 .nav-menu ul li:last-child{
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 .nav-menu ul li a{
     display: inline-block;
@@ -382,10 +414,13 @@ Home Section
 ======================================*/
 .home-section{
     position: relative;
+    padding: 100px 0;
 }
 .home-section .full-screen{
     padding: 50px 0;
-    min-height: 100vh;
+    /* min-height: 90vh; */
+    height: 100%;
+
 }
 .home-section .home-text,
 .home-section .home-img{
@@ -433,12 +468,12 @@ Home Section
 About Section
 ======================================*/
 .about-section{
-    padding: 80px 0 0px;
+    padding: 100px 0 0px;
     min-height: 100vh;
 }
 .about-section .about-img{
     flex: 0 0 40%;
-    max-width: 40%;
+    max-width: 35%;
     padding: 0 15px;
 }
 .about-section .about-img .img-box{
@@ -487,12 +522,14 @@ About Section
     padding: 0 15px;
 }
 .about-section .about-info p{
-    font-size: 16px;
-    line-height: 26px;
+    font-size: 17px;
+    /* font-weight: 350; */
+    line-height: 25px;
     margin-bottom: 15px;
-    color: var(--text-black-700);
+    color: var(--text-black-900);
     margin-bottom: 30px;
-    word-spacing: 3px;
+    /* word-spacing: 2px; */
+    font-family:  'Open Sans', sans-serif;
 }
 .about-section .about-info .colored{
     color: var(--skin-color);
@@ -517,6 +554,7 @@ About Section
     color: var(--text-black-600);
     font-weight: 500;
     text-transform: capitalize;
+    
 }
 .about-section .about-tabs .tab-item:hover:not(active){
     opacity: 0.6;
@@ -578,6 +616,7 @@ About Section
 .about-section .course,
 .about-section .experience{
     padding-bottom: 80px;
+    font-family:  'Open Sans', sans-serif !important;
 }
 .about-section .timeline{
     flex: 0 0 100%;
@@ -652,7 +691,7 @@ About Section
     display: block;
     margin: 0 0 10px;
     text-transform: capitalize;
-    
+    font-family:  'Open Sans', sans-serif !important;
 }
 .about-section .timeline .timeline-item-inner h3{
     font-size: 20px;
@@ -660,12 +699,14 @@ About Section
     font-weight: 600;
     margin: 0 0 5px;
     text-transform: capitalize;
+    font-family:  'Open Sans', sans-serif;
 }
 .about-section .timeline .timeline-item-inner h4{
     font-size: 16px;
     font-style: italic;
     color: var(--text-black-600);
     margin: 0; 
+    font-family:  'Open Sans', sans-serif;
 }
 .about-section .timeline .timeline-item-inner p{
     font-size: 14px;
@@ -674,19 +715,22 @@ About Section
     margin: 0px 0 0;
     /* text-align: justify; */
     font-weight: 500;
+    font-family:  'Open Sans', sans-serif;
 }
 .about-section .timeline .timeline-item-inner li{
     font-size: 14px;
-    color: var(--text-black-900);
+    color: var(--text-black-800);
     line-height: 26px;
     margin: 0 15px 0;
     text-align: justify;
-    font-weight: 500;
     overflow-wrap: break-word;
+    font-family: 'Open Sans', sans-serif;
 }
 .about-section .timeline .timeline-item-inner .colored{
-    color: var(--skin-color);
+    /* color: var(--skin-color); */
+    color: var(--text-black-900);
     font-weight: 650;
+    font-family:  'Open Sans', sans-serif;
 }
 
 
@@ -694,8 +738,8 @@ About Section
 Portfolio Section
 ======================================*/
 .portfolio-section{
-    padding: 80px 0 80px;
-    min-height: 100vh;
+    padding: 100px 0 80px;
+    min-height: 90vh;
 }
 .portfolio-section .section-title{
     margin-bottom: 40px;
@@ -732,6 +776,13 @@ Portfolio Section
     display: flex;
     flex-wrap: wrap;
 }
+.portfolio-section .portfolio-item.hide{
+    display: none;
+}
+.portfolio-section .portfolio-item.show{
+    display: block;
+    animation: fadeInTop 0.5s ease;
+}
 .portfolio-section .portfolio-item-inner{
     padding: 15px;
     border-radius: 5px;
@@ -748,6 +799,9 @@ Portfolio Section
 }
 .portfolio-section .portfolio-item-img{
     position: relative;
+}
+.portfolio-section .portfolio-item-media{
+    display: none;
 }
 .portfolio-section .portfolio-item-img .view-project{
     text-transform: capitalize;
@@ -772,13 +826,14 @@ Portfolio Section
 .portfolio-section .portfolio-item-inner p{
     font-size: 16px;
     margin: 10px 0 0;
-    color: var(--text-black-600);
+    color: var(--text-black-700);
     text-transform: capitalize;
+    /* font-weight: 600; */
 }
 
 
 /*====================================
-Portfolio Section
+Portfolio Popup
 ======================================*/
 .portfolio-popup{
     background-color: var(--bg-black-50);
@@ -788,30 +843,69 @@ Portfolio Section
     width: 100%;
     height: 100%;
     z-index: 1000;
-    overflow-y: auto;
+    overflow-y: scroll;
     background-color: var(--bg-main);
     opacity: 0;
     visibility: hidden;
+    transition: all 0.3s ease;
+}
+.portfolio-popup.open{
+    visibility: visible;
+    opacity: 1;
+}
+.portfolio-popup .pp-loader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1005;
+    background-color: var(--bg-opacity);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+}
+.portfolio-popup .pp-loader.active{
+    visibility: visible;
+    opacity: 1;
+}
+.portfolio-popup .pp-loader div{
+    height: 40px;
+    width: 40px;
+    border: 3px solid var(--skin-color);
+    border-radius: 50%;
+    border-right: 3px solid transparent;
+    animation: spin 2s linear infinite;
 }
 .portfolio-popup .pp-details{
     max-width: 1350px;
-    width: calc(85% + 30px);
+    width: calc(75% + 30px);
     margin: auto;
     max-height: 0; 
     overflow: hidden;
     opacity: 0;
+    transition: all 0.5s ease;
+}
+.portfolio-popup .pp-details.active{
+    opacity: 1;
 }
 .portfolio-popup .pp-details-inner{
-    padding: 30px 0; 
+    padding: 0 0; 
 }
 .portfolio-popup .pp-title{
     padding: 0 15px;
+    max-width: 1350px;
+    width: calc(75% + 30px);
+    margin: auto;
+    margin-top: 20px;
 }
 .portfolio-popup .pp-title h2{
     font-size:28px;
     color: var(--text-black-900);
     text-transform: capitalize;
-    font-weight: 600;
+    font-weight: 800;
     margin: 0 0 5px;
 }
 .portfolio-popup .pp-title p{
@@ -819,13 +913,16 @@ Portfolio Section
     font-weight: 600;
     color: var(--text-black-600);
     margin: 0 0 15px;
-    border-bottom: 1px solid var(--bg-black-100);
     padding-bottom: 10px;
+}
+.portfolio-popup .pp-title p span{
+    font-weight: 400;
+    text-transform: capitalize;
 }
 .portfolio-popup .pp-project-details h3{
     font-size: 20px;
     font-weight: 600;
-    color: var(--text-black-600);
+    color: var(--skin-color);
     margin: 0 0 15px;
     text-transform: capitalize;
 }
@@ -838,9 +935,12 @@ Portfolio Section
     font-size: 16px;
     color: var(--text-black-600);
     line-height: 26px;
+    text-align: justify;
+    font-family:  'Open Sans', sans-serif;
 }
 .portfolio-popup .description p span{
     font-weight: 400;
+    font-family:  'Open Sans', sans-serif
 }
 .portfolio-popup .info{
     flex: 0 0 35%;
@@ -853,12 +953,17 @@ Portfolio Section
     font-weight: 600;
     color: var(--text-black-600);
     font-size: 16px;
+    font-family:  'Open Sans', sans-serif
 }
 .portfolio-popup .info ul li:last-child{
-    margin-bottom: 0;
+    margin-bottom: 10px;
+}
+.portfolio-popup .info ul li a{
+    color: var(--skin-color);
 }
 .portfolio-popup .info ul li span{
     font-weight: 400;
+    font-family:  'Open Sans', sans-serif
 }
 .portfolio-popup .separator{
     height: 1px;
@@ -883,7 +988,7 @@ Portfolio Section
     justify-content: center;
 }
 .portfolio-popup .pp-main-inner{
-    padding: 70px 0 50px;
+    padding: 70px 0 100px;
     position: relative;
 }
 .portfolio-popup .pp-project-details-btn{
@@ -926,7 +1031,7 @@ Portfolio Section
 .portfolio-popup .pp-counter{
     position: absolute;
     right: 0;
-    height: 40px;
+    height: 95px;
     line-height: 40px;
     bottom: 5px;
     font-size: 16px;

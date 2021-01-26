@@ -27,15 +27,20 @@
       <div class="logo">
         <a href="index.html">K</a>
       </div>
-      <div class="hamburger-btn outer-shadow hover-in-shadow">
-        <span></span>
+      <div class="nav-hor">
+        <a href="#home" class="link-item active" data-target=".home" >home</a>
+        <a href="#about" class="link-item" data-target=".about" id="about-btn">about</a>
+        <a href="#portfolio" class="link-item" data-target=".portfolio">portfolio</a>
       </div>
+      <!-- <div class="hamburger-btn outer-shadow hover-in-shadow">
+        <span></span>
+      </div> -->
     </div>
   </div> 
 </header>
 <!-- ==================================================================== -->
 <!-- Navigation Menu Start -->
-<nav class="nav-menu">
+<!-- <nav class="nav-menu">
   <div class="close-nav-menu outer-shadow hover-in-shadow">&times;</div>
   <div class="nav-menu-inner">
     <ul>
@@ -47,12 +52,12 @@
   <p class="copyright-text">&copy; 2021 Kelvin Liusiani</p>
 </nav>
 <div class="fade-out-effect"> 
-</div>
+</div> -->
 <!-- ==================================================================== -->
 <!-- Home Section Start -->
 <section class="home-section section active" id="home">
   <!-- Effect Wrap Start -->
-  <div class="effect-wrap">
+  <div class="effect-wrap" id="home1">
     <div class="effect effect-1"></div>
     <div class="effect effect-2">
       <div></div><div></div><div></div><div></div><div></div><div></div><div></div>
@@ -65,10 +70,10 @@
   <div class="container">
     <div class="row full-screen align-items-center">
       <div class="home-text">
-        <p>Hello</p>
-        <h2>I'm Kelvin Liusiani</h2>
-        <h1>Artificial Intelligence Engineer and Data Scientist</h1>
-        <a href="#about" class="link-item btn-1 outer-shadow hover-in-shadow">More About Me</a>
+        <p>Hello...!</p>
+        <h2>I'm Kelvin <span style="color:var(--skin-color);font-weight:800;">Liusiani</span></h2>
+        <h1>Artificial Intelligence Engineer</h1>
+        <a onclick="document.getElementById('about-btn').click();" class="link-item btn-1 outer-shadow hover-in-shadow">More About Me</a>
       </div>
       <div class="home-img">
         <div class="img-box inner-shadow">
@@ -103,11 +108,12 @@
       </div>
       <div class="about-info">
         <!-- about info -->
-        <p style="margin-bottom: 10px;"><b class="colored">Kelvin</b> is <b class="colored">Artificial Intelligence Engineer</b> and <b class="colored">Data Scientist.</b></p>
         <p>
-          He is very enthusiast with AI for over two years of continual learning and experience in <b class="colored">Computer Vision</b> and <b class="colored">Data Science.</b> 
-          He also Very passionate with <b class="colored">new technology</b>, routinely read new and SOTA research. He loves to be <b class="colored">engineer</b>, who always 
-          solving any problem that he is facing using his <b class="colored">logical thinking</b> and his <b class="colored">fundamental skills.</b> 
+          He has one year experience working as AI Engineer.
+          Collecting data, training deep learning model, building & optimizing inference and evaluating
+          solution are his daily jobdesks to deliver the most suitable solution for the client. 
+          Reading SOTA research papers is must to keep update about AI technology. 
+          <p>Currently, he is still growing by learning and practicing. So, he will be happy to hear any oppotunities!</p>
         </p>
         <!-- Button -->
         <a href="cv.pdf" class="btn-1 outer-shadow hover-in-shadow"> Download CV</a>
@@ -310,7 +316,7 @@
 
 <!-- ==================================================================== -->
 <!-- Portfolio Menu -->
-<section class="portfolio-section section">
+<section class="portfolio-section section" id="portfolio">
   <div class="container">
     <!-- Title -->
     <div class="row">
@@ -328,34 +334,110 @@
       </div>
     </div>
     <!-- Porfolio Item Start -->
-    <div class="row portfolio-item">
-      <div class="portfolio-item">
+    <div class="row portfolio-items">
+      <!-- 1. Social Distancing  -->
+      <div class="portfolio-item" data-category="computer-vision">
         <div class="portfolio-item-inner outer-shadow">
           <div class="portfolio-item-img">
-            <img src="img/portfolio/thumb/project-1.png" alt="portfolio" 
-            data-screenshots="img/portfolio/large/project-1/1.png,
-            img/portfolio/large/project-1/2.png,
-            img/portfolio/large/project-1/3.png,
-            ">
+            <img src="img/portfolio/sosdis.jpg" alt="portfolio">
+            <div class="portfolio-item-media">
+              <iframe width="960" height="480" src="https://www.youtube.com/embed/i5nNLytjaAo?autoplay=1" allowfullscreen></iframe>
+            </div>
             <span class="view-project">View Project</span>
           </div>
-          <p class="portfolio-item-title">Personal Portfolio</p>
+          <p class="portfolio-item-title">Social Distancing AI Solution</p>
           <!-- Portfolio Item Details -->
           <div class="portfolio-item-details">
             <div class="row">
               <div class="description">
                 <h3>Project Brief</h3>
-                <p>FDHSAFHKDSAJHFDAS
-                  FDASFDASFDSAFDAS
-                  FSDAFDASFDSAFDAS
+                <p>&emsp;&ensp;&ensp;Social Distancing AI Solution was build when Covid-19 was world's pandemic. 
+                  At this momment, we have to keep our distance about 2 meters to other people. 
+                  With this solution, by using CCTV as the source we make alarm when people does not 
+                  keep their distance to other. It is true that we can not make all people obey this 
+                  rule. But, we can use threshold to trigger the alarm, like it is turn on when 60% 
+                  people on screen cannot keep their distance to others. Also, we can collect the 
+                  statistical data for our goverment and other institute. 
                 </p>
               </div>
               <div class="info">
                 <h3>Project Info</h3>
                 <ul>
                   <li>Date - <span>2020</span></li>
-                  <li>Programming Language - <span>Python</span></li>
-                  <li>Framework - <span>YoloV5</span></li>
+                  <li>Model - <span>MobileNet V2 SSD</span></li>
+                  <li>Other - <span>Object Detection, Object Tracking, Perspective Transform</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 2. Smart Digital Signage -->
+      <div class="portfolio-item" data-category="computer-vision">
+        <div class="portfolio-item-inner outer-shadow">
+          <div class="portfolio-item-img">
+            <img src="img/portfolio/dig-signage2.jpg" alt="portfolio">
+            <div class="portfolio-item-media">
+              <iframe width="960" height="480" src="https://www.youtube.com/embed/IzcUjAJBFCs?autoplay=1" allowfullscreen></iframe>
+              <iframe width="960" height="480" src="https://www.youtube.com/embed/6LAXzisdxHc?autoplay=1" allowfullscreen></iframe>
+            </div>
+            <span class="view-project">View Project</span>
+          </div>
+          <p class="portfolio-item-title">Smart Digital Signage AI Solution</p>
+          <!-- Portfolio Item Details -->
+          <div class="portfolio-item-details">
+            <div class="row">
+              <div class="description">
+                <h3>Project Brief</h3>
+                <p>&emsp;&ensp;&ensp;Digital signage is a digital displays that use technologies to display digital images, video, text, and others. 
+                    They can be found in public spaces, transportation systems, retail stores, hotels, restaurants, etc.
+                    One of the function of digital signage is advertising and marketing. 
+                    By adding AI on Digital Signage, this (Smart Digital Signage) can advertise the most suitable ads product to the visitors. 
+                    For example, if the visitor is a man who around 20 y.o, we can give ad discount sports shoes instead of woman's parfume or bag. 
+                    By collecting metadata of the visitor(s) and targeting the ads to them who are paying attention to our digital signage, this solution can improve the sales. 
+                </p>
+              </div>
+              <div class="info">
+                <h3>Project Info</h3>
+                <ul>
+                  <li>Date - <span>2020</span></li>
+                  <li>Model - <span>Face Detection, Landmark Regression, Head-Pose Estimation, Gaze Estimation, Age-Gender Recognition, Emotion Recognition</span></li>
+                  <li>Other - <span>Object Tracking</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 3. Vehicle Counting -->
+      <div class="portfolio-item" data-category="computer-vision">
+        <div class="portfolio-item-inner outer-shadow">
+          <div class="portfolio-item-img">
+            <img src="img/portfolio/vehicle-counter.jpg" alt="portfolio">
+            <div class="portfolio-item-media">
+              <iframe width="960" height="480" src="https://www.youtube.com/embed/5cLvHkExDFM?autoplay=1" allowfullscreen></iframe>
+              <iframe width="960" height="480" src="https://www.youtube.com/embed/h6b1x8Ec5Sw?autoplay=1" allowfullscreen></iframe>
+            </div>
+            <span class="view-project">View Project</span>
+          </div>
+          <p class="portfolio-item-title">Vehicle Counting AI Solution</p>
+          <!-- Portfolio Item Details -->
+          <div class="portfolio-item-details">
+            <div class="row">
+              <div class="description">
+                <h3>Project Brief</h3>
+                <p>&emsp;&ensp;&ensp;Vehicle Counting AI Solution helps us to count how many vehicle crossing the road. 
+                  It is helpful for goverment to know how traffic this main road with exact number. 
+                  This solution also suit for company who want to know how many vehicle enter or exit their area. 
+                  For example at warehouse, housing block, mining field, etc.
+                </p>
+              </div>
+              <div class="info">
+                <h3>Project Info</h3>
+                <ul>
+                  <li>Date - <span>2020</span></li>
+                  <li>Model - <span>Yolo V5</span></li>
+                  <li>Other - <span>Object Detection, Object Tracking</span></li>
                 </ul>
               </div>
             </div>
@@ -370,12 +452,12 @@
 <!-- ==================================================================== -->
 <!-- Portfolio Popup-->
 <div class="pp portfolio-popup">
+  <div class="pp-title">
+    <h2>Personal Portfolio</h2>
+    <p>Category - <span class="pp-project-category">Deep Learning</span></p>
+  </div>
   <div class="pp-details">
     <div class="pp-details-inner">
-      <div class="pp-title">
-        <h2>Personal Portfolio</h2>
-        <p>Category - <span class="pp-project-cateogry">Deep Learning</span></p>
-      </div>
       <div class="pp-project-details">
         <!-- Copy start from item-details row -->
         <div class="row">
@@ -391,7 +473,7 @@
             <ul>
               <li>Date - <span>2020</span></li>
               <li>Programming Language - <span>Python</span></li>
-              <li>Framework - <span>YoloV5</span></li>
+              <li>Details - <span>Perspective Transform</span></li>
             </ul>
           </div>
         </div>
@@ -404,8 +486,14 @@
     <div class="pp-main-inner">
       <div class="pp-project-details-btn outer-shadow hover-in-shadow">Project Details <i class="fas fa-plus"></i></div>
       <div class="pp-close outer-shadow hover-in-shadow">&times;</div>
-      <img src="img/portfolio/large/project-1/1.png" alt="img" class="pp-img outer-shadow">
+      <div class="pp-media">
+      </div>
+      <!-- <img src="img/portfolio/large/project-1/1.png" alt="img" class="pp-img outer-shadow"> -->
       <div class="pp-counter">1 of 6</div>
+    </div>
+    <!-- ?? -->
+    <div class="pp-loader">
+      <div></div>
     </div>
     <!-- PP Navigation -->
     <div class="pp-prev"><i class="fas fa-play"></i></div>
@@ -415,7 +503,7 @@
 
 <!-- ==================================================================== -->
 <!-- Style Switcher -->
-<div class="style-switcher outer-shadow">
+<div class="style-switcher outer-shadow close">
   <div class="style-switcher-toggler s-icon outer-shadow hover-in-shadow">
     <i class="fas fa-cog fa-spin"></i>
   </div>
